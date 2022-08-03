@@ -1,0 +1,52 @@
+package buoi3;
+
+import java.util.Scanner;
+
+public class B2_BTVN {
+	private static Scanner sc = new Scanner (System.in);
+	static private int MaNV = 0;
+	private int Age;
+	private String Name;
+	private String Address;
+	private String Department;
+	
+	public void input(int Age, String Name, String Address, String Department)
+	{
+		this.Age = Age;
+		this.Name = Name;
+		this.Address = Address;
+		this.Department = Department;
+	}
+	
+	public void output() {
+		MaNV++;
+		System.out.printf("\n%-15s%-15s%-15s%-15s%-15s", MaNV, Name, Age, Address, Department);
+	}
+	
+	public static void main (String[] args) {
+		B2_BTVN nv1 = new B2_BTVN ();
+		B2_BTVN nv2 = new B2_BTVN ();
+		B2_BTVN nv3 = new B2_BTVN ();
+		B2_BTVN nv4 = new B2_BTVN ();
+		B2_BTVN nv5 = new B2_BTVN ();
+		nv1.input(23, "A", "TH", "CNTT");
+		nv2.input(21, "B", "HN", "QLI");
+		nv3.input(21, "C", "HP", "CNTT");
+		nv4.input(24, "D", "QLI", "CNTT");
+		nv5.input(25, "E", "HN", "QLI");
+		System.out.printf("%-30s\n", "THONG TIN CAC NHAN VIEN");
+		System.out.printf("%-15s%-15s%-15s%-15s%-15s", "Manv", "Tennv", "Tuoi", "DiaChi", "BoPhan");
+		nv1.output();
+		nv2.output();
+		nv3.output();
+		nv4.output();
+		nv5.output();
+		
+	}
+}
+
+//Khai báo 1 lớp NhanVien (class NhanVien) có các thuộc tính có các thuộc tính mã nhân viên, tuổi, 
+//tên nhân viên, địa chỉ,
+//bộ phận làm việc.
+//Mã nhân viên tự động tăng không cần nhập vào. 
+//Khai báo 5 đối tượng NhanVien in ra thông tin của các nhân viên này dưới dạng bảng. 

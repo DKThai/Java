@@ -1,0 +1,56 @@
+package buoi3;
+
+import java.util.Scanner;
+
+public class B3_BTVN {
+	private static Scanner sc = new Scanner (System.in);
+	private double a;
+	private double b;
+	private double c;
+	
+	public void input() {
+		System.out.println("Nhap a: ");
+		a = sc.nextDouble();
+		System.out.println("Nhap b: ");
+		b = sc.nextDouble();
+		System.out.println("Nhap c: ");
+		c = sc.nextDouble();
+		sc.nextLine();
+	}
+	
+	public void count() {
+		double d = b*b - 4*a*c;
+		if (a < 0) {
+			System.out.println("PT khong ton tai");
+		} else if (a == 0) {
+			System.out.println("x = " + (-c / b));
+		} else {
+			if (d < 0) {
+				System.out.println("PT vo nghiem");
+			} else if (d == 0) {
+				System.out.println("PT co nghiem kep");
+				System.out.println("x1 = x2 = " + (-b / 2*a));
+			} else {
+				System.out.println("PT co 2 nghiem");
+				System.out.println("x1 = " + ((-b - Math.sqrt(d)) / (2 * a)));
+				System.out.println("x2 = " + ((-b + Math.sqrt(d)) / (2 * a)));
+			}
+		}
+	}
+	
+	public void output() {
+		System.out.println("PHUONG TRINH");
+		System.out.println(a + "x^2 + " + b + "x + " + c + " = 0");
+		count();
+	}
+	
+	public static void main (String[] args) {
+		B3_BTVN a = new B3_BTVN();
+		a.input();
+		a.output();
+	}
+	
+}
+
+
+

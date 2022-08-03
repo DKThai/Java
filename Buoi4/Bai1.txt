@@ -1,0 +1,74 @@
+package buoi3;
+
+import java.util.Scanner;
+
+public class B1_BTVN {
+	private static Scanner sc = new Scanner (System.in);
+	private double length;
+	private double width;
+	
+	public Rectangle (double length, double width) {
+		this.length = length;
+		this.width = width;
+	}
+
+	public double getLength() {
+		return length;
+	}
+
+	public void setLength(double length) {
+		this.length = length;
+	}
+
+	public double getWidth() {
+		return width;
+	}
+
+	public void setWidth(double width) {
+		this.width = width;
+	}
+	
+	public double getArea() {
+		return length * width;
+	}
+	
+	public double getPerimeter() {
+		return (length + width) * 2;
+	}
+	
+	public void input() {
+		System.out.print("Nhap chieu dai hcn: ");
+		length = sc.nextDouble();
+		System.out.print("Nhap chieu rong hcn: ");
+		width = sc.nextDouble();
+		sc.nextLine();
+	}
+	
+	public void output() {
+		System.out.println("Chieu dai: " + length);
+		System.out.println("Chieu rong: "+ width);
+		System.out.println("Dien tich: " + getArea());
+		System.out.println("Chu vi: " + getPerimeter());
+	}
+	
+	public static void main (String[] args) {
+		B1_BTVN a = new B1_BTVN();
+		B1_BTVN b = new B1_BTVN();
+		System.out.println("Nhap hcn A:");
+		a.input();
+		System.out.println("Nhap hcn B:");
+		b.setLength(10);
+		b.setWidth(6);
+		System.out.println("HCN A: ");
+		a.output();
+		System.out.println("HCN B:");
+		b.output();
+		if (a.getArea() > b.getArea())
+			System.out.println("Hinh chu nhat a co dien tich lon hon");
+		else if (a.getArea() < b.getArea())
+			System.out.println("Hinh chu nhat b co dien tich lon hon");
+		else
+			System.out.println("Hai hinh chu nhat co dien tich bang nhau");
+	}
+	
+}

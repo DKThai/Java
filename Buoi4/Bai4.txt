@@ -1,0 +1,83 @@
+package buoi3;
+
+import java.util.Scanner;
+
+public class Employee {
+	static Scanner sc = new Scanner (System.in);
+	private String id;
+	private String name;
+	private int age;
+	private int workingDays;
+	private int salary;
+	final int PRICE = 50;
+	
+	public Employee(){
+    }
+	
+	public Employee(String id, String name, int age, int workingDays) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.workingDays = workingDays;
+	}
+	
+	public int getSalary() {
+		return workingDays * PRICE;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getWorkingDays() {
+		return workingDays;
+	}
+	
+	public void setWorkingDays(int workingDays) {
+		this.workingDays = workingDays;
+	}
+	
+	public void input() {
+		System.out.print("Nhap id: ");
+		id = sc.nextLine();
+		System.out.print("Nhap name: ");
+		name = sc.nextLine();
+		System.out.print("Nhap age: ");
+		age = sc.nextInt();
+		System.out.print("Nhap workingDays: ");
+		workingDays = sc.nextInt();
+		sc.nextLine();
+	}
+	
+	public void output() {
+		System.out.printf("\n%-15s%-15s%-15s%-15s%-15s", "Id", "Name", "Age", "WorkingDays", "Salary");;
+		System.out.printf("\n%-15s%-15s%-15s%-15s%-15s", id, name, age, workingDays, getSalary());
+	}
+	
+	public static void main (String[] args) {
+		Employee d = new Employee ();
+		d.input();
+		d.output();
+	}
+	
+}
